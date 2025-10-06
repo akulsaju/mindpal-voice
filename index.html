@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Full Screen Embed</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
+  <title>Open Eleven Labs Agent</title>
+  <script>
+    function openAgent() {
+      const url = "https://elevenlabs.io/app/talk-to?agent_id=agent_1201k6wvnys5estbfae7867nzv70&sid1=194c3ae5-d24c-4cb1-a2d3-ac2be68abead&sid2=648927c6371bd93193746ad9";
+      const newWindow = window.open(url, "_blank");
+      if (newWindow) {
+        newWindow.moveTo(0, 0);
+        newWindow.resizeTo(screen.width, screen.height);
+      } else {
+        alert("Popup blocked! Please allow popups for this site.");
+      }
     }
-    iframe {
-      border: none;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+  </script>
 </head>
-<body>
-  <!-- Replace the URL below with your desired link -->
-  <iframe src="https://elevenlabs.io/app/talk-to?agent_id=agent_1201k6wvnys5estbfae7867nzv70&sid1=194c3ae5-d24c-4cb1-a2d3-ac2be68abead&sid2=648927c6371bd93193746ad9"></iframe>
+<body style="display:flex; justify-content:center; align-items:center; height:100vh;">
+  <button onclick="openAgent()" style="padding:20px 40px; font-size:18px;">
+    Open Agent Fullscreen
+  </button>
 </body>
 </html>
